@@ -134,13 +134,11 @@ jobs:
       
       - name: Check extracted folder name
         run: ls $GITHUB_WORKSPACE
-
-      - name: Setup Clang PATH
-        run: |
-          echo "${{ github.workspace }}/clang-custom/proton-clang-20210522/bin" >> $GITHUB_PATH
       
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
+        env:
+          PATH: ${{ github.workspace }}/clang-custom/proton-clang-20210522/bin:$PATH
 
       - name: 🔩 Pack Process
         uses: ./.github/workflows/pack-process
