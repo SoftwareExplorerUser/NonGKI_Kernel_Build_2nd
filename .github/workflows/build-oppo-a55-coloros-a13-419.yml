@@ -135,9 +135,12 @@ jobs:
       - name: Check extracted folder name
         run: ls $GITHUB_WORKSPACE
 
-      - name: Setup Clang PATH
+      - name: 找一下 Clang 到底在哪
         run: |
-          echo "${{ github.workspace }}/proton-clang-20210522/bin" >> $GITHUB_PATH
+          echo "====== 当前工作区根目录 ======"
+          ls $GITHUB_WORKSPACE
+          echo "====== 搜索 clang 可执行文件 ======"
+          find $GITHUB_WORKSPACE -type f -name "clang" -executable 2>/dev/null
       
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
