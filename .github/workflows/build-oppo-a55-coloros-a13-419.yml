@@ -135,12 +135,9 @@ jobs:
       - name: Check extracted folder name
         run: ls $GITHUB_WORKSPACE
 
-      - name: 找一下 Clang 到底在哪
+      - name: Setup Clang PATH
         run: |
-          echo "====== 当前工作区根目录 ======"
-          ls $GITHUB_WORKSPACE
-          echo "====== 搜索 clang 可执行文件 ======"
-          find $GITHUB_WORKSPACE -type f -name "clang" -executable 2>/dev/null
+          echo "${{ github.workspace }}/clang-custom/bin" >> $GITHUB_PATH
       
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
