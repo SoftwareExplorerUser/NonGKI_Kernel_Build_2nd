@@ -18,11 +18,11 @@ env:
   CLANG_SOURCE : "https://github.com/kdrag0n/proton-clang/archive/refs/tags/20210522.tar.gz"
   CLANG_BRANCH : ""
 
-  GCC_GNU : false
-  GCC_64_SOURCE : ""
-  GCC_64_BRANCH : ""
-  GCC_32_SOURCE : ""
-  GCC_32_BRANCH : ""
+  GCC_GNU: false
+  GCC_64_SOURCE: "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"
+  GCC_64_BRANCH: "android12L-release"
+  GCC_32_SOURCE: "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
+  GCC_32_BRANCH: "android12L-release"
 
   DEFCONFIG_SOURCE: ""
   DEFCONFIG_NAME : "k6833v1_64_k419_deconfig"
@@ -134,6 +134,13 @@ jobs:
       
       - name: Check extracted folder name
         run: ls $GITHUB_WORKSPACE
+      
+      - name: 确认 Clang 目录结构
+        run: |
+          echo "====== 查看 clang-custom 目录 ======"
+          ls -la ${{ github.workspace }}/clang-custom
+          echo "====== 查看 clang-custom/bin ======"
+          ls -la ${{ github.workspace }}/clang-custom/bin
 
       - name: Setup Clang PATH
         run: |
