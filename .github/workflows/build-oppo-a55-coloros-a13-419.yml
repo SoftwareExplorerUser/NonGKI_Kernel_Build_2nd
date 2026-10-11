@@ -136,8 +136,8 @@ jobs:
         run: ls $GITHUB_WORKSPACE
 
       - name: Setup Clang PATH
-      run: |
-        echo "${{ github.workspace }}/proton-clang-20210522/bin" >> $GITHUB_PATH
+        run: |
+          echo "${{ github.workspace }}/proton-clang-20210522/bin" >> $GITHUB_PATH
       
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
