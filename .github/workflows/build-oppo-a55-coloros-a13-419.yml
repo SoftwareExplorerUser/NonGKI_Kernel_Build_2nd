@@ -135,7 +135,7 @@ jobs:
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
         env:
-        PATH: ${{ github.workspace }}/proton-clang-20210522/bin:${{ env.PATH }}
+          PATH: ${{ github.workspace }}/proton-clang-20210522/bin:${{ env.PATH }}
 
       - name: 🔩 Pack Process
         uses: ./.github/workflows/pack-process
