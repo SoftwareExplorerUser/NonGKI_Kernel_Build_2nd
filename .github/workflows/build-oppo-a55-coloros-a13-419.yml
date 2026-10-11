@@ -25,7 +25,7 @@ env:
   GCC_32_BRANCH: "android12L-release"
 
   DEFCONFIG_SOURCE: ""
-  DEFCONFIG_NAME : "k6833v1_64_k419_deconfig"
+  DEFCONFIG_NAME : "k6833v1_64_k419_defconfig"
   DEFCONFIG_ORIGIN_IMAGE: ""
   DEFCONFIG_FROM_BOOT: false
 
