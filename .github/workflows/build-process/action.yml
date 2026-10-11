@@ -33,6 +33,7 @@ runs:
       - name: Build Kernel
         shell: bash
         run: |
+          export PATH=$GITHUB_WORKSPACE/clang-custom/proton-clang-20210522/bin:$PATH
           cd $GITHUB_WORKSPACE/device_kernel/
 
           # Function
